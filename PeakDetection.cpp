@@ -94,7 +94,7 @@ void PeakDetection::add(double newSample) {
     index = lag + j;
 }
 
-void PeakDetection::normalizeLastSamples(int n){
+void PeakDetection::normalizeLastSamples(){
   for (int i = 0; i < lag ; ++i) {
     data[i] = data[i] / threshold;
   }
