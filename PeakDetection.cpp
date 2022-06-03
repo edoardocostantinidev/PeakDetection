@@ -94,6 +94,12 @@ void PeakDetection::add(double newSample) {
     index = lag + j;
 }
 
+void PeakDetection::normalizeLastSamples(int n){
+  for (int i = 0; i < lag ; ++i) {
+    data[i] = data[i] / threshold;
+  }
+}
+
 double PeakDetection::getFilt() {
   int i = index % lag;
   return avg[i];
